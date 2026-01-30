@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenSorry | Autodiagnóstico Ciberseguridad</title>
+    <title>OpenSory | Autodiagnóstico Ciberseguridad</title>
     <meta name="description" content="Plataforma de autodiagnóstico de ciberseguridad para equipos TI.">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
 </head>
+
 <body>
 
     <header>
         <div class="container">
             <div class="logo-container fade-in">
-                <h1 class="logo-text">Open<span class="logo-accent">Sorry</span></h1>
+                <h1 class="logo-text">Open<span class="logo-accent">Sory</span></h1>
             </div>
             <h2 class="fade-in" style="animation-delay: 0.1s;">Kit de Autodiagnóstico & Respuesta a Incidentes</h2>
         </div>
     </header>
 
     <main class="container">
-        
+
         <section class="hero fade-in" style="animation-delay: 0.2s;">
             <p style="margin-bottom: 25px; color: #ccc; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Bienvenido al portal de diagnóstico. Siga los pasos secuenciales para recolectar evidencia y evaluar su postura de seguridad actual según estándares CIS v8.1.
+                Bienvenido al portal de diagnóstico. Siga los pasos secuenciales para recolectar evidencia y evaluar su
+                postura de seguridad actual según estándares CIS v8.1.
             </p>
             <a href="#step-1" class="btn btn-primary btn-start">Iniciar Diagnóstico</a>
         </section>
 
         <!-- Process Steps -->
         <section class="process-section fade-in" style="animation-delay: 0.3s;">
-            
+
             <!-- Step 1 -->
             <div id="step-1" class="accordion-item">
                 <button class="accordion-header">
@@ -39,17 +43,22 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-body">
-                        <p style="margin-bottom: 15px;">Descargue el paquete de scripts de recolección automatizada. Este ZIP contiene herramientas portables para Windows/Linux.</p>
-                        <div style="background: rgba(0,255,65,0.05); padding: 15px; border-radius: 4px; margin-bottom: 20px; border: 1px dashed var(--accent-dim);">
+                        <p style="margin-bottom: 15px;">Descargue el paquete de scripts de recolección automatizada.
+                            Este ZIP contiene herramientas portables para Windows/Linux.</p>
+                        <div
+                            style="background: rgba(0,255,65,0.05); padding: 15px; border-radius: 4px; margin-bottom: 20px; border: 1px dashed var(--accent-dim);">
                             <strong>📦 Contenido del paquete:</strong>
-                            <ul style="margin-left: 20px; margin-top: 5px; color: var(--text-secondary); font-size: 0.9em;">
+                            <ul
+                                style="margin-left: 20px; margin-top: 5px; color: var(--text-secondary); font-size: 0.9em;">
                                 <li>Auditor de Políticas Locales (Powershell)</li>
                                 <li>Detector de Vulnerabilidades Básicas</li>
                                 <li>Guía PDF de ejecución</li>
                             </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">⬇ Descargar Toolkit v1.2 (ZIP)</a>
-                        <a href="#" class="btn btn-outline" style="margin-left: 10px;">📄 Ver Guía PDF</a>
+                        <a href="toolkit_opensory_v1.zip" class="btn btn-primary" download>⬇ Descargar Toolkit v1.2
+                            (ZIP)</a>
+                        <a href="README.txt" target="_blank" class="btn btn-outline" style="margin-left: 10px;">📄 Ver
+                            Guía de Uso</a>
                     </div>
                 </div>
             </div>
@@ -62,9 +71,11 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-body">
-                        <p style="margin-bottom: 15px;">Complete el siguiente formulario para evaluar controles administrativos que no pueden ser verificados por script.</p>
+                        <p style="margin-bottom: 15px;">Complete el siguiente formulario para evaluar controles
+                            administrativos que no pueden ser verificados por script.</p>
                         <!-- Microsoft Forms Embed Placeholder -->
-                        <div style="width: 100%; height: 400px; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #333;">
+                        <div
+                            style="width: 100%; height: 400px; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #333;">
                             <div style="text-align: center;">
                                 <h3>Microsoft Forms Embed</h3>
                                 <p><iframe> src="https://forms.office.com/..."</iframe></p>
@@ -84,8 +95,10 @@
                 <div class="accordion-content">
                     <div class="accordion-body">
                         <p>Cargue los resultados de los scripts y capturas adicionales en el repositorio seguro.</p>
-                        <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center; margin: 15px 0;">☁ Ir a Carpeta Compartida (OneDrive)</a>
-                        
+                        <a href="#" class="btn btn-outline"
+                            style="width: 100%; justify-content: center; margin: 15px 0;">☁ Ir a Carpeta Compartida
+                            (OneDrive)</a>
+
                         <div class="upload-types">
                             <div class="type-card">
                                 <h4>📄 JSON/XML</h4>
@@ -93,7 +106,8 @@
                             </div>
                             <div class="type-card">
                                 <h4>🖼 Visuales</h4>
-                                <p>Capturas de pantalla de configuraciones específicas o errores en carpeta "Screenshots".</p>
+                                <p>Capturas de pantalla de configuraciones específicas o errores en carpeta
+                                    "Screenshots".</p>
                             </div>
                             <div class="type-card">
                                 <h4>🔒 Logs Sensibles</h4>
@@ -112,9 +126,11 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-body">
-                        <p>Una vez completados los pasos anteriores, notifique a nuestro equipo SOC para iniciar el análisis.</p>
+                        <p>Una vez completados los pasos anteriores, notifique a nuestro equipo SOC para iniciar el
+                            análisis.</p>
                         <div style="margin-top: 15px;">
-                            <a href="mailto:support@opensorry.com?subject=Diagnostico%20Finalizado%20-%20[NombreCliente]&body=Hola,%0A%0AHe%20completado%20la%20subida%20de%20evidencias%20y%20el%20cuesitonario.%0A%0ACliente:%20[Nombre]%0AFechas:%20[Fecha]" class="btn btn-primary btn-mail">📧 Enviar Notificación al SOC</a>
+                            <a href="mailto:support@opensorry.com?subject=Diagnostico%20Finalizado%20-%20[NombreCliente]&body=Hola,%0A%0AHe%20completado%20la%20subida%20de%20evidencias%20y%20el%20cuesitonario.%0A%0ACliente:%20[Nombre]%0AFechas:%20[Fecha]"
+                                class="btn btn-primary btn-mail">📧 Enviar Notificación al SOC</a>
                         </div>
                     </div>
                 </div>
@@ -124,13 +140,13 @@
 
         <section class="cis-section">
             <h3 class="section-title">Checklist Rápido CIS v8.1 (IG1/IG2)</h3>
-            
+
             <!-- IG1 -->
             <div class="checklist-group">
                 <div class="checklist-title">
                     <span>Gestión de Activos (IG1)</span>
                 </div>
-                
+
                 <div class="check-item">
                     <input type="checkbox" id="cis1-1" class="check-input">
                     <label for="cis1-1" class="check-label">
@@ -152,7 +168,7 @@
                 <div class="checklist-title">
                     <span>Protección de Datos (IG2)</span>
                 </div>
-                
+
                 <div class="check-item">
                     <input type="checkbox" id="cis3-1" class="check-input">
                     <label for="cis3-1" class="check-label">
@@ -175,11 +191,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year">2026</span> OpenSorry Security Services.</p>
+            <p>&copy; <span id="current-year">2026</span> OpenSory Security Services.</p>
             <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">Confidencial - Solo para uso autorizado.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
