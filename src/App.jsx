@@ -29,7 +29,7 @@ function App() {
     <div className="app-container">
       {/* Header */}
       <header style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <img src="/logo.png" alt="OpenLock" style={{ height: '60px', marginBottom: '10px' }} />
+        <img src="logo.png" alt="OpenLock" style={{ height: '60px', marginBottom: '10px' }} />
         <h2 style={{ color: 'var(--primary-color)', letterSpacing: '2px', fontSize: '1.2rem', textTransform: 'uppercase' }}>
           Security Assessment Suite
         </h2>
@@ -76,7 +76,7 @@ function App() {
             </ol>
           </div>
           <div className="actions">
-            <a href="/toolkit_opensory_v1.zip" download className="btn btn-outline">
+            <a href="toolkit_opensory_v1.zip" download className="btn btn-outline">
               <Download size={18} style={{ marginRight: 8 }} /> Descargar ZIP
             </a>
             <button className="btn btn-primary" onClick={() => advanceStep(1)}>
@@ -100,7 +100,7 @@ function App() {
             </ul>
           </div>
           <div className="actions">
-            <a href="/Guia_Uso_OpenSory.pdf" target="_blank" className="btn btn-outline">
+            <a href="Guia_Uso_OpenSory.pdf" target="_blank" className="btn btn-outline">
               <FileText size={18} style={{ marginRight: 8 }} /> Ver Guía PDF
             </a>
             <button className="btn btn-primary" onClick={() => advanceStep(2)}>
