@@ -28,10 +28,30 @@ function App() {
   return (
     <div className="app-container">
       {/* Header */}
-      <header style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <img src="logo.png" alt="OpenLock" style={{ height: '60px', marginBottom: '10px' }} />
-        <h2 style={{ color: 'var(--primary-color)', letterSpacing: '2px', fontSize: '1.2rem', textTransform: 'uppercase' }}>
-          Security Assessment Suite
+      {/* Header */}
+      <header style={{
+        textAlign: 'center',
+        marginBottom: '40px',
+        background: '#fff',
+        padding: '20px',
+        borderRadius: '16px',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+        border: '1px solid #f0f0f0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '20px'
+      }}>
+        <img src="logo.png" alt="OpenLock" style={{ height: '50px' }} />
+        <div style={{ width: '1px', height: '40px', background: '#e0e0e0' }}></div>
+        <h2 style={{
+          color: 'var(--primary-color)',
+          letterSpacing: '1px',
+          fontSize: '1.4rem',
+          margin: 0,
+          fontWeight: 700
+        }}>
+          OpenLock
         </h2>
       </header>
 
