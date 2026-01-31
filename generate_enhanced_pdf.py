@@ -15,14 +15,16 @@ class PDF(FPDF):
         
         self.set_font('Arial', '', 10)
         self.set_xy(15, 22)
-        self.cell(0, 10, 'Guía Técnica de Ejecución y Diagnóstico CIS v8.1', 0, 1, 'L')
+        # Replacing 'Guía' with 'Guia' to be safe or ensure unicode is handled if possible, 
+        # but latin-1 supports accents like í. Emojis are the problem.
+        self.cell(0, 10, 'Guia Tecnica de Ejecucion y Diagnostico CIS v8.1', 0, 1, 'L')
         self.ln(20)
 
     def footer(self):
         self.set_y(-15)
         self.set_font('Arial', 'I', 8)
         self.set_text_color(128)
-        self.cell(0, 10, f'Confidencial - OpenLock 2026 - Página {self.page_no()}', 0, 0, 'C')
+        self.cell(0, 10, f'Confidencial - OpenLock 2026 - Pagina {self.page_no()}', 0, 0, 'C')
 
     def chapter_title(self, label):
         self.set_font('Arial', 'B', 14)
@@ -67,53 +69,53 @@ def create_pdf():
     
     # Intro
     pdf.set_font('Arial', 'B', 16)
-    pdf.cell(0, 10, 'Introducción', 0, 1)
+    pdf.cell(0, 10, 'Introduccion', 0, 1)
     pdf.chapter_body(
-        "Este documento detalla el procedimiento técnico para la recolección de evidencia de ciberseguridad. "
-        "Las herramientas suministradas (OpenLock Toolkit) son scripts de auditoría de solo lectura diseñados para "
+        "Este documento detalla el procedimiento tecnico para la recoleccion de evidencia de ciberseguridad. "
+        "Las herramientas suministradas (OpenLock Toolkit) son scripts de auditoria de solo lectura disenados para "
         "evaluar la postura de seguridad frente a los Controles CIS v8.1 sin impactar la disponibilidad del servicio."
     )
     
     # Tools Detail
     pdf.ln(5)
-    pdf.chapter_title("1. Análisis de Inventario (CIS 1 & 2)")
+    pdf.chapter_title("1. Analisis de Inventario (CIS 1 & 2)")
     pdf.chapter_body(
-        "El primer paso para la defensa es conocer qué se está defendiendo. El script `inventario_activos.py` realiza un levantamiento "
+        "El primer paso para la defensa es conocer que se esta defendiendo. El script 'inventario_activos.py' realiza un levantamiento "
         "detallado del hardware y software."
     )
-    pdf.info_box("🔧 Detalle Técnico", 
-                 "• Software: Lista todas las aplicaciones instaladas vía WMI/Registry.\n"
-                 "• Objetivo: Detectar software no autorizado, versiones obsoletas o 'Shadow IT'.\n"
-                 "• Archivo generado: inventario_[hostname].json")
+    pdf.info_box("Detalle Tecnico", 
+                 "- Software: Lista todas las aplicaciones instaladas via WMI/Registry.\n"
+                 "- Objetivo: Detectar software no autorizado, versiones obsoletas o 'Shadow IT'.\n"
+                 "- Archivo generado: inventario_[hostname].json")
 
-    pdf.chapter_title("2. Auditoría de Identidad (CIS 5 & 6)")
+    pdf.chapter_title("2. Auditoria de Identidad (CIS 5 & 6)")
     pdf.chapter_body(
-        "Los ataques de identidad son el vector más común actual. `auditoria_politicas.py` examina la configuración "
+        "Los ataques de identidad son el vector mas comun actual. 'auditoria_politicas.py' examina la configuracion "
         "local de seguridad de Windows."
     )
-    pdf.info_box("🔧 Detalle Técnico", 
-                 "• Políticas Password: Verifica longitud mínima, complejidad y bloqueo de cuentas.\n"
-                 "• Interpretación: Si la longitud es < 14 caracteres o no hay bloqueo, el riesgo de fuerza bruta es Alto.\n"
-                 "• Archivo generado: auditoria_identidad_local.json")
+    pdf.info_box("Detalle Tecnico", 
+                 "- Politicas Password: Verifica longitud minima, complejidad y bloqueo de cuentas.\n"
+                 "- Interpretacion: Si la longitud es < 14 caracteres o no hay bloqueo, el riesgo de fuerza bruta es Alto.\n"
+                 "- Archivo generado: auditoria_identidad_local.json")
 
     pdf.chapter_title("3. Superficie de Ataque de Red (CIS 4)")
     pdf.chapter_body(
-        "Es crítico minimizar los servicios expuestos. `auditoria_red.py` realiza un escaneo de puertos TCP "
+        "Es critico minimizar los servicios expuestos. 'auditoria_red.py' realiza un escaneo de puertos TCP "
         "en la interfaz local (loopback) para identificar servicios escuchando."
     )
-    pdf.info_box("🔧 Detalle Técnico", 
-                 "• Escaneo: Top 1000 puertos + puertos críticos (RDP 3389, SQL 1433, SMB 445).\n"
-                 "• Riesgo: Puertos como 3389 (RDP) abiertos innecesariamente aumentan el riesgo de Ransomware.\n"
-                 "• Archivo generado: auditoria_red_puertos.json")
+    pdf.info_box("Detalle Tecnico", 
+                 "- Escaneo: Top 1000 puertos + puertos criticos (RDP 3389, SQL 1433, SMB 445).\n"
+                 "- Riesgo: Puertos como 3389 (RDP) abiertos innecesariamente aumentan el riesgo de Ransomware.\n"
+                 "- Archivo generado: auditoria_red_puertos.json")
 
-    pdf.chapter_title("4. Estado de Protección Malware (CIS 10)")
+    pdf.chapter_title("4. Estado de Proteccion Malware (CIS 10)")
     pdf.chapter_body(
-        "Verificación de la eficacia de las herramientas EDR/Antivirus instaladas mediante `auditoria_av.py`."
+        "Verificacion de la eficacia de las herramientas EDR/Antivirus instaladas mediante 'auditoria_av.py'."
     )
-    pdf.info_box("🔧 Detalle Técnico", 
-                 "• Consulta WMI root\\SecurityCenter2.\n"
-                 "• Verifica: Que el AV esté registrado, habilitado y con firmas actualizadas.\n"
-                 "• Archivo generado: auditoria_antivirus.json")
+    pdf.info_box("Detalle Tecnico", 
+                 "- Consulta WMI root\\SecurityCenter2.\n"
+                 "- Verifica: Que el AV este registrado, habilitado y con firmas actualizadas.\n"
+                 "- Archivo generado: auditoria_antivirus.json")
 
     # Instructions
     pdf.add_page()
@@ -124,15 +126,15 @@ def create_pdf():
     
     steps = (
         "1. Verifique que se hayan generado los 4 archivos .json en la carpeta del toolkit.\n"
-        "2. Comprima los archivos JSON en un único archivo ZIP llamado 'Evidencia_[NombreCliente].zip'.\n"
-        "3. Acceda al portal OpenLock y navegue a la Misión 4.\n"
+        "2. Comprima los archivos JSON en un unico archivo ZIP llamado 'Evidencia_[NombreCliente].zip'.\n"
+        "3. Acceda al portal OpenLock y navegue a la Mision 4.\n"
         "4. Use el enlace seguro de OneDrive para cargar el archivo ZIP.\n"
-        "5. Haga clic en 'Notificar Finalización' para alertar a nuestro SOC."
+        "5. Haga clic en 'Notificar Finalizacion' para alertar a nuestro SOC."
     )
-    pdf.code_box(steps)  # Reusing code_box style if I implement it, or just plain text
+    pdf.code_box(steps)
     
     pdf.chapter_body(
-        "\nSi encuentra errores durante la ejecución (ej. 'Access Denied'), asegúrese de estar ejecutando "
+        "\nSi encuentra errores durante la ejecucion (ej. 'Access Denied'), asegurese de estar ejecutando "
         "los scripts con privilegios de Administrador (Clic derecho -> Ejecutar como Administrador)."
     )
 
